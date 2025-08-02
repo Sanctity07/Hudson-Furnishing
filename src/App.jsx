@@ -48,7 +48,7 @@ function App() {
         }
       )
     }
-  }, [])
+  }, [currentLocation])
 
   return (
     <div className="app-container">
