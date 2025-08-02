@@ -95,7 +95,7 @@ const HomePage = () => {
               <AboutText>
                 In our store, we make it easy for you to shop for your personal style by providing you an easy way to 
                 navigate our showrooms where you will find everything you need to decorate & organize your home. 
-                Inside our space, you'll find designer furniture that's made with heartfelt passion, as well as 
+                Inside our space, you will find designer furniture that is made with heartfelt passion, as well as 
                 immaculate attention to detail.
               </AboutText>
             </AboutContent>
