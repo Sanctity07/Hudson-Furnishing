@@ -19,7 +19,6 @@ function App() {
   })
 
   useEffect(() => {
-    // Get user's geolocation if available
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         position => {
@@ -28,18 +27,16 @@ function App() {
             latitude: position.coords.latitude,
             longitude: position.coords.longitude
           })
-          
-          // Attempt to get city name using reverse geocoding
+
           fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${position.coords.latitude}&lon=${position.coords.longitude}`)
             .then(response => response.json())
             .then(data => {
               if (data.address) {
                 const city = data.address.city || data.address.town || data.address.village || 'Unknown'
-                setCurrentLocation(prev => ({...prev, city}))
+                setCurrentLocation(prev => ({ ...prev, city }))
               }
             })
             .catch(() => {
-              // If geocoding fails, keep default value
               console.log('Could not determine city name')
             })
         },
@@ -55,7 +52,7 @@ function App() {
       <Header />
       <main className="main-content">
         <Routes>
-          <Route path="/Hudson-Furnishings" element={<HomePage />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/faq" element={<FaqPage />} />
